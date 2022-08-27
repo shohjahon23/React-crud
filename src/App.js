@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./App.css";
 
 function App() {
-  let [email, setEmail] = useState("fewfwe");
+  let [email, setEmail] = useState("efe");
   let [password, setPassword] = useState("");
   let [data, setData] = useState([]);
 
@@ -22,14 +22,11 @@ function App() {
     if (watchUpdate !== 0) {
       let findData = data.find((user) => user.id == watchUpdate);
       findData.email = email.current.value;
-      findData.password = password.cu9rrent.value;
+      findData.password = password.current.value;
 
       setData([...data]);
-      email.current.value = ''
-      password.current.value = "";
-      watchUpdate = 0
     }
-    if (watchUpdate == 0) {
+    if (watchUpdate === 0) {
       let newUser = {
         id: data.length + 1,
         email: email.current.value,
